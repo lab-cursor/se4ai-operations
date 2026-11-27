@@ -109,7 +109,9 @@ Creating accounts and tokens takes time and needs your e-mail, so do it **first*
 
         <img src="docs/images/grafana-service-account-token.png" alt="The Tokens section of a service account, with the Add service account token button and one token" width="600">
 
-4. **Codespaces secrets** (used by Terraform in the Codespace). On GitHub: **your profile picture → Settings → Codespaces → Secrets → New secret**. You will need these five; create the four you have now (all but `RENDER_OWNER_ID`), and for each one select your fork under **Repository access**:
+4. **Codespaces secrets** (used by Terraform in the Codespace). On GitHub: **your profile picture → Settings → Codespaces** (or open [github.com/settings/codespaces](https://github.com/settings/codespaces)), then under **Secrets**, click **New secret**. You will need these five; create the four you have now (all but `RENDER_OWNER_ID`), and for each one select your fork under **Repository access**:
+
+   <img src="docs/images/github-codespaces-secrets.png" alt="GitHub Settings, Codespaces page: the Codespace user secrets section with the New secret button" width="600">
 
    | Name | Value |
    |---|---|
