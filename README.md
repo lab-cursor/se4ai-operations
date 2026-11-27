@@ -109,12 +109,12 @@ Creating accounts and tokens takes time and needs your e-mail, so do it **first*
 
         <img src="docs/images/grafana-service-account-token.png" alt="The Tokens section of a service account, with the Add service account token button and one token" width="600">
 
-4. **Codespaces secrets** (used by Terraform in the Codespace). On GitHub: **your profile picture → Settings → Codespaces → Secrets → New secret**. Create these five, and for each one select your fork under **Repository access**:
+4. **Codespaces secrets** (used by Terraform in the Codespace). On GitHub: **your profile picture → Settings → Codespaces → Secrets → New secret**. You will need these five; create the four you have now (all but `RENDER_OWNER_ID`), and for each one select your fork under **Repository access**:
 
    | Name | Value |
    |---|---|
    | `RENDER_API_KEY` | the Render API key |
-   | `RENDER_OWNER_ID` | your Render workspace id: see step 6 |
+   | `RENDER_OWNER_ID` | your Render workspace id (`tea-...`). You do not have it yet: create the other four secrets now, and **step 6 of this Preparation** below shows how to get this one. |
    | `GRAFANA_STACK_SLUG` | your stack slug, for example `jdoe` |
    | `GRAFANA_CLOUD_ACCESS_POLICY_TOKEN` | the `glc_...` token |
    | `GRAFANA_SERVICE_ACCOUNT_TOKEN` | the `glsa_...` token |
