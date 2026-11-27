@@ -87,11 +87,20 @@ Creating accounts and tokens takes time and needs your e-mail, so do it **first*
 
    - Under **Select the permissions this API key can use**, click **All**, so every permission is **Read & write**. Then click **Generate API key** and copy the key: Render shows it only once.
 
-     ![The Create an API key dialog with All permissions selected](docs/images/render-api-key-permissions.png)
+     <img src="docs/images/render-api-key-permissions.png" alt="The Create an API key dialog with All permissions selected" width="400">
 
-3. **Grafana Cloud** (metrics and dashboards). Create a free account at [grafana.com](https://grafana.com/auth/sign-up/create-user). You get a **stack**: your own Grafana at `https://<stack>.grafana.net`. The `<stack>` part is your **stack slug**.
-   - **Access policy token.** At [grafana.com](https://grafana.com), open **My Account → Security → Access Policies → Create access policy**. Realm: your stack. Scopes: **stacks: Read** and **integration-management: Read and Write**. Then click **Add token** on the new policy and copy it (it starts with `glc_`).
-   - **Service account token.** In your stack (`https://<stack>.grafana.net`), open **Administration → Users and access → Service accounts → Add service account**, role **Editor**. Then **Add service account token** and copy it (it starts with `glsa_`).
+3. **Grafana Cloud** (metrics and dashboards). Create a free account at [grafana.com](https://grafana.com/auth/sign-up/create-user). You get a **stack**: your own Grafana at `https://<stack>.grafana.net`. The `<stack>` part is your **stack slug**: you see it in your browser's address bar when your stack's home page opens.
+
+   <img src="docs/images/grafana-cloud-home.png" alt="The home page of a new Grafana Cloud stack: Welcome to Grafana Cloud" width="600">
+
+   - **Access policy token.** In your stack, open the menu on the left: **Administration → Users and access → Cloud access policies**, then click **Create access policy**.
+     1. Type `se4ai-operations` as the **Display name** and the **Name**.
+     2. Under **Scopes**, open **Add scope** and add **stacks** and **integration-management**. Tick **Read** for `stacks`, and **Read** and **Write** for `integration-management`. Terraform needs only these two; the other scopes in the list do not matter for this lab.
+     3. Click **Create**. On the new policy in the list, click **Add token**, name it, click **Create**, and copy the token (it starts with `glc_`): Grafana shows it only once.
+
+     <img src="docs/images/grafana-access-policy.png" alt="The Create new access policy dialog, with the Scopes table and the Add scope box" width="500">
+
+   - **Service account token.** In the same menu, open **Administration → Users and access → Service accounts → Add service account**, role **Editor**. Then **Add service account token** and copy it (it starts with `glsa_`).
 
 4. **Codespaces secrets** (used by Terraform in the Codespace). On GitHub: **your profile picture → Settings → Codespaces → Secrets → New secret**. Create these five, and for each one select your fork under **Repository access**:
 
