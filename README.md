@@ -100,7 +100,14 @@ Creating accounts and tokens takes time and needs your e-mail, so do it **first*
 
      <img src="docs/images/grafana-access-policy.png" alt="The Create new access policy dialog, with the Scopes table and the Add scope box" width="500">
 
-   - **Service account token.** In the same menu, open **Administration → Users and access → Service accounts → Add service account**, role **Editor**. Then **Add service account token** and copy it (it starts with `glsa_`).
+   - **Service account token.** In the same menu, open **Administration → Users and access → Service accounts**, then click **Add service account**.
+     1. Type `se4ai-operations` as the **Display name**, change the **Role** to **Editor** (enough to create dashboards), and click **Create**.
+
+        <img src="docs/images/grafana-service-account.png" alt="The Create service account form, with the Display name and Role fields" width="500">
+
+     2. On the new service account's page, under **Tokens**, click **Add service account token**, then **Generate token**, and copy it (it starts with `glsa_`): Grafana shows it only once. The token then appears in the list, but its value is never shown again.
+
+        <img src="docs/images/grafana-service-account-token.png" alt="The Tokens section of a service account, with the Add service account token button and one token" width="600">
 
 4. **Codespaces secrets** (used by Terraform in the Codespace). On GitHub: **your profile picture → Settings → Codespaces → Secrets → New secret**. Create these five, and for each one select your fork under **Repository access**:
 
