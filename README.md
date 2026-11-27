@@ -81,7 +81,9 @@ Creating accounts and tokens takes time and needs your e-mail, so do it **first*
 1. **Fork** this repository into your own account. On your fork, open the **Actions** tab and click **"I understand my workflows, go ahead and enable them"**.
 
 2. **Render** (hosting). Create a free account at [render.com](https://render.com).
-   - **Account Settings → API Keys → Create API Key**. Copy it.
+   - Open **Account settings** (click your profile picture, top right), choose **API Keys** in the menu on the right, and click **+ Create API key**. Name it `se4ai-operations`. If Render asks which permissions the key gets, allow it to create, update and deploy services in your workspace. Copy the key: Render shows it only once.
+
+     ![The API Keys page in Render's Account settings, with the Create API key button](docs/images/render-api-keys.png)
    - If Render asks you for a credit card and you cannot add one, tell the instructor **before you continue**.
 
 3. **Grafana Cloud** (metrics and dashboards). Create a free account at [grafana.com](https://grafana.com/auth/sign-up/create-user). You get a **stack**: your own Grafana at `https://<stack>.grafana.net`. The `<stack>` part is your **stack slug**.
